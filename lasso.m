@@ -1,5 +1,4 @@
-cd('~/Desktop')
-T = readtable('data.csv');
+T = readtable('../data/data.csv');
 
 X = table2array(T(:,4:end));
 Y = table2array(T(:,3));
