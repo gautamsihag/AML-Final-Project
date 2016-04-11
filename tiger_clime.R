@@ -7,6 +7,7 @@ args <- commandArgs(TRUE)
 data <- read.csv(args[1],header=TRUE)
 data[,1] <- NULL
 data[,2] <- NULL
+data <- na.omit(data)
 data <- as.matrix(data)
 
 #### Use the TIGER algorithm to estimate the sparse precision matrix
