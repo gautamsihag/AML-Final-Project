@@ -6,6 +6,8 @@ args <- commandArgs(TRUE)
 gdp <- read.table(args[1],sep=",",header=TRUE)
 gdp <- gdp[,3] 
 
+#### TODO Box-Cox tranformation
+
 #### Split data into test and training sets
 n_train <- floor(length(gdp) * 0.8)
 train <- head(gdp,n=-1)
