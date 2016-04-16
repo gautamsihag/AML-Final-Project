@@ -4,17 +4,19 @@ library(flare)
 args <- commandArgs(TRUE)
 
 #### Read in the data table
-data <- read.csv(args[1],header=TRUE)
-data[,1] <- NULL
-data[,2] <- NULL
-data <- na.omit(data)
-data <- as.matrix(data)
+x <- read.csv(args[1],sep=",")
+x <- na.omit(x)
+dates <- x$V1
+x[,1] <- NULL
+
+print(x)
 
 #### Use the TIGER algorithm to estimate the sparse precision matrix
-results <- sugm(data, method =args[2])
+results <- sugm(as.matrix(x), method =args[2])
 plot(results)
 
 #### Choose graph with maximal sparsity and plot the results
 sparsity <- results$sparsity
 ind <- which.max(sparsity)
 sugm.plot(results$path[[ind]])
+

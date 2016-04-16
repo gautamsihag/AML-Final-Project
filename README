@@ -2,7 +2,7 @@ Models to try for GDP forecasting:
 Sparse PCA
 Lasso Regression
 Ordinary Least Squares regression
-Combined l1 and l2 penalty regression
+Elastic Net Regularization
 Graphical Models
 Time series methods? (ARIMA, ARIMAX etc.)
 
